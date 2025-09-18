@@ -1,0 +1,382 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  height: 100vh;
+}
+
+#root {
+  height: 100vh;
+}
+
+/* Main background container */
+.background-container {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+}
+
+/* App container */
+.app-container {
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.scroll-container {
+  width: 100%;
+  overflow-y: auto;
+}
+
+.safe-area {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* Form container */
+.form-container {
+  margin: 8px;
+  padding: 8px;
+}
+
+.title {
+  background-color: #F5BCBA;
+  font-size: 32px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.sub-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: black;
+}
+
+.description {
+  color: black;
+  margin-bottom: 8px;
+  text-align: center;
+  font-style: italic;
+}
+
+.heading {
+  font-size: 18px;
+  color: black;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+/* Input wrapper styles */
+.input-wrapper {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.input-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.input-style {
+  padding: 8px;
+  width: 80px;
+  border: 1px solid #16213e;
+  border-radius: 4px;
+  margin-right: 16px;
+  font-size: 16px;
+  background: white;
+}
+
+.input-style:focus {
+  outline: 2px solid #5DA3FA;
+  border-color: #5DA3FA;
+}
+
+.error-text {
+  font-size: 12px;
+  color: #ff0d10;
+  margin-top: 4px;
+}
+
+/* Custom checkbox styles */
+.checkbox-container {
+  margin-right: 60px;
+}
+
+.custom-checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.custom-checkbox.checked {
+  transform: scale(1.1);
+  border-color: transparent;
+}
+
+.custom-checkbox.lowercase.checked {
+  background-color: #192A56;
+}
+
+.custom-checkbox.uppercase.checked {
+  background-color: #BA2F16;
+}
+
+.custom-checkbox.numbers.checked {
+  background-color: #EA7773;
+}
+
+.custom-checkbox.symbols.checked {
+  background-color: #FAD02E;
+}
+
+.custom-checkbox::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.custom-checkbox.checked::after {
+  opacity: 1;
+}
+
+.custom-checkbox.symbols.checked::after {
+  color: black;
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.primary-btn {
+  width: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #5DA3FA;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primary-btn:hover:not(:disabled) {
+  background-color: #4A92E9;
+  transform: translateY(-1px);
+}
+
+.primary-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.primary-btn-txt {
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.secondary-btn {
+  width: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #CAD5E2;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background-color: #B9C6D3;
+  transform: translateY(-1px);
+}
+
+.secondary-btn-txt {
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Card styles */
+.card {
+  padding: 12px;
+  border-radius: 6px;
+  margin: 12px;
+  margin-top: 12px;
+}
+
+.card-elevated {
+  background-color: #F5BCBA;
+  box-shadow: 0 2px 4px rgba(51, 51, 51, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.generated-password {
+  font-size: 22px;
+  text-align: center;
+  margin: 12px 0;
+  color: #000;
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: all;
+  transition: background-color 0.2s ease;
+}
+
+.generated-password:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.copy-button {
+  background: #5DA3FA;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.copy-button:hover {
+  background: #4A92E9;
+}
+
+.copy-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 28px;
+    padding: 10px;
+  }
+  
+  .safe-area {
+    padding: 5px;
+  }
+  
+  .input-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .checkbox-container {
+    margin-right: 0;
+    align-self: flex-end;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .primary-btn, .secondary-btn {
+    width: 200px;
+  }
+  
+  .generated-password {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 24px;
+  }
+  
+  .heading {
+    font-size: 16px;
+  }
+  
+  .input-style {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.custom-checkbox:focus-visible,
+.primary-btn:focus-visible,
+.secondary-btn:focus-visible,
+.input-style:focus-visible {
+  outline: 2px solid #5DA3FA;
+  outline-offset: 2px;
+}
